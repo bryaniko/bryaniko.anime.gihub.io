@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://127.0.0.1:8000/animes -->
+<html lang="en" data-bs-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Library - Collection</title>
+    <link href="./Anime Library - Collection_files/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Anime Library - Collection_files/all.min.css">
+    <style>
+        :root {
+            --primary-color:rgb(83, 162, 223);
+            --card-hover-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        [data-bs-theme="dark"] {
+            --primary-color:rgb(161, 20, 255);
+            --card-hover-shadow: 0 10px 20px rgb(161, 20, 255);
+            color-scheme: dark;
+        }
+        
+        [data-bs-theme="light"] {
+            --primary-color: rgb(83, 162, 223);
+            --card-hover-shadow: 0 10px 20px rgb(83, 162, 223);
+            color-scheme: light;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            color: var(--primary-color);
+            transition: background-color 0.3s ease;
+        }
+        
+        .anime-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        
+        .cover-image {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .card-footer {
+            background-color: transparent;
+            border-top: none;
+        }
+        
+        .theme-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .theme-toggle i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .theme-toggle:hover i {
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/animes">
+                <i class="fas fa-book-open me-2"></i>Anime Library
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/animes">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/animes/create">Add New</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="theme-toggle nav-link" id="themeToggle">
+                            <i class="fas fa-sun d-none" id="lightIcon"></i>
+                            <i class="fas fa-moon" id="darkIcon"></i>
+                            <span class="ms-2 d-none d-md-inline">Theme</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+            <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Anime/Manga Collection</h1>
+        <a href="http://127.0.0.1:8000/animes/create" class="btn btn">
+            <i class="fas fa-plus me-1"></i> Add New
+        </a>
+    </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="https://via.placeholder.com/300x450?text=No+Image" class="card-img-top cover-image" alt="No Image">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Manga</span>
+                            </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">12345t</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Ongoing</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/8" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/8/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/8" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/ev1trFlWzLiafMLmWXcLpiSNHEDLONAh0iDaHy4o.jpg" class="card-img-top cover-image" alt="kaleng">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Manga</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>4/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">kaleng</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>wisnu
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>2020
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Completed</span>
+                                                                    <span class="badge text-bg-secondary">ecchi</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/7" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/7/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/7" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/2S39tMFrBmrJPqaLgHtd7aegTZCrrZ1gqmoeWvwR.jpg" class="card-img-top cover-image" alt="Null201">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Manga</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>10/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Null201</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>Null2
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>2009
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Completed</span>
+                                                                    <span class="badge text-bg-secondary">Null2</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/6" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/6/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/6" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/21yOxsepmLTeFysABXZqsitZ5nsx9gm3cfmI6Y65.png" class="card-img-top cover-image" alt="Null1">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Anime</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>10/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Null1</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>Null1
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>14
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Ongoing</span>
+                                                                    <span class="badge text-bg-secondary">Null1</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/5" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/5/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/5" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/EEjGybwmdy1lkx0UUTauteCj1UPDb3LhlefgrX9X.png" class="card-img-top cover-image" alt="Null">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Light Novel</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>6/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Null</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>Null
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>2025
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Hiatus</span>
+                                                                    <span class="badge text-bg-secondary">Null</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/4" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/4/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/4" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/xJtFQbnzPEuW0bGl63mOas4twIVHfeuhjMKCQXGi.jpg" class="card-img-top cover-image" alt="Title">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Anime</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>10/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>Author
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>2024
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Completed</span>
+                                                                    <span class="badge text-bg-secondary">Supernatural</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/3" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/3/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/3" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col">
+                    <div class="card anime-card h-100">
+                        <div class="position-relative">
+                                                            <img src="./Anime Library - Collection_files/9PBNGm8BD0RFjPgUIB8yoyM0Czkvz2qMHdn1Rx7O.jpg" class="card-img-top cover-image" alt="shooter 5 second">
+                                                        <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge text-bg-dark">Manga</span>
+                            </div>
+                                                            <div class="position-absolute bottom-0 end-0 m-2">
+                                    <span class="badge text-bg-warning">
+                                        <i class="fas fa-star me-1"></i>7/10
+                                    </span>
+                                </div>
+                                                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">shooter 5 second</h5>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-user me-1"></i>bryan iko rismaputra
+                                                                    </small>
+                            </p>
+                            <p class="card-text text-body-secondary mb-1">
+                                <small>
+                                                                            <i class="fas fa-calendar me-1"></i>2026
+                                                                    </small>
+                            </p>
+                            <p class="card-text">
+                                <span class="badge text-bg-info">Ongoing</span>
+                                                                    <span class="badge text-bg-secondary">Action</span>
+                                                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="http://127.0.0.1:8000/animes/2" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="http://127.0.0.1:8000/animes/2/edit" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="http://127.0.0.1:8000/animes/2" method="POST" class="d-inline">
+                                <input type="hidden" name="_token" value="dOaUHUJHnMVmlFtoWDmM73WqeTtbXPqAyCxRHeea" autocomplete="off">                                <input type="hidden" name="_method" value="DELETE">                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm(&#39;Are you sure you want to delete this item?&#39;)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+        </div>
+
+    <footer class="text-center mt-5 py-3 text-muted">
+        <div class="container">
+            <p>© 2025 Anime Library. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./Anime Library - Collection_files/bootstrap.bundle.min.js.download"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const htmlElement = document.documentElement;
+            const themeToggle = document.getElementById('themeToggle');
+            const lightIcon = document.getElementById('lightIcon');
+            const darkIcon = document.getElementById('darkIcon');
+            
+            // Check for saved theme preference or use the system preference
+            const savedTheme = localStorage.getItem('theme');
+            
+            if (savedTheme) {
+                htmlElement.setAttribute('data-bs-theme', savedTheme);
+                updateThemeIcons(savedTheme);
+            } else {
+                // Use system preference
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = prefersDarkScheme ? 'dark' : 'light';
+                htmlElement.setAttribute('data-bs-theme', theme);
+                updateThemeIcons(theme);
+            }
+            
+            // Toggle theme
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = htmlElement.getAttribute('data-bs-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateThemeIcons(newTheme);
+            });
+            
+            function updateThemeIcons(theme) {
+                if (theme === 'dark') {
+                    lightIcon.classList.add('d-none');
+                    darkIcon.classList.remove('d-none');
+                } else {
+                    lightIcon.classList.remove('d-none');
+                    darkIcon.classList.add('d-none');
+                }
+            }
+        });
+    </script>
+
+</body></html>
